@@ -22,11 +22,15 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X = [ones(m,1) X]
 
+lay1 = sigmoid(X * Theta1')
 
+lay1 = [ones(m,1) lay1]
 
+output = sigmoid(lay1 * Theta2')
 
-
+[C, p] = max(output, [], 2);
 
 
 % =========================================================================
